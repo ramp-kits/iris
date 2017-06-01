@@ -14,10 +14,12 @@ score_types = [
         name='err', n_columns=len(prediction_labels)),
     rw.score_types.NegativeLogLikelihood(
         name='nll', n_columns=len(prediction_labels)),
+    rw.score_types.F1Above(
+        name='f1_70', n_columns=len(prediction_labels), threshold=0.7),
 ]
 
 
-def get_train_data(path='.'):
+def get_data(path='.'):
     data = pd.read_csv(os.path.join(path, 'public_data', 'public_train.csv'))
     target_column_name = 'species'
     y_array = data[target_column_name].values
