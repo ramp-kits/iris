@@ -18,5 +18,7 @@ install:
 script:
     - flake8 *.py submissions/*/*.py
     - coverage run ramp-workflow/rampwf/test_submission.py .
+after_success:
+    - codecov
 notifications:
   email: true
