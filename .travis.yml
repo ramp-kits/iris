@@ -10,8 +10,12 @@ install:
     - source activate testenv
     - conda install --yes --quiet numpy scipy matplotlib scikit-learn pandas
     - pip install -q flake8
+    - git clone https://github.com/paris-saclay-cds/ramp-workflow.git
+    - cd ramp-workflow
+    - python setup.py install
+    - cd ..
 script:
     - flake8 *.py submissions/*/*.py
-    - python user_test_submission.py
+    - test_submission
 notifications:
   email: true
