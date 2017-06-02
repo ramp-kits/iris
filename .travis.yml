@@ -12,10 +12,11 @@ install:
     - pip install codecov
     - pip install -q flake8
     - git clone https://github.com/paris-saclay-cds/ramp-workflow.git
+    - cd ramp-workflow
+    - python setup.py install
+    - cd ..
 script:
     - flake8 *.py submissions/*/*.py
     - coverage run ramp-workflow/rampwf/test_submission.py .
-after_success:
-    - codecov
 notifications:
   email: true
