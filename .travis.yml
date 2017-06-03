@@ -8,7 +8,7 @@ before_install:
 install:
     - conda create -n testenv --yes pip python=3.6
     - source activate testenv
-    - conda install --yes --quiet numpy scipy matplotlib scikit-learn pandas
+    - conda install --yes --quiet numpy scipy matplotlib scikit-learn pandas jupyter seaborn
     - pip install codecov
     - pip install -q flake8
     - git clone https://github.com/paris-saclay-cds/ramp-workflow.git
@@ -17,6 +17,7 @@ install:
     - cd ..
 script:
     - flake8 *.py submissions/*/*.py
+    - jupyter nbconvert --execute iris_test_starting_kit.ipynb
     - coverage run ramp-workflow/rampwf/test_submission.py .
 after_success:
     - codecov
