@@ -21,7 +21,7 @@ install:
     - cd ..
 script:
     - flake8 *.py submissions/*/*.py
-    - jupyter nbconvert --execute iris_test_starting_kit.ipynb --ExecutePreprocessor.kernel_name=$IPYTHON_KERNEL
+    - jupyter nbconvert --execute iris_starting_kit.ipynb --ExecutePreprocessor.kernel_name=$IPYTHON_KERNEL
     - coverage run ramp-workflow/rampwf/test_submission.py .
     - coverage run ramp-workflow/rampwf/test_submission.py submission=random_forest_10_10
 after_success:
