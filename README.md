@@ -16,4 +16,4 @@ to test the starting kit submission (`submissions/starting_kit`) and
 test_submission submission=random_forest_10_10
 ```
 
-to test any other submission in `submissions`.
+to test `random_forest_10_10` or any other submission in `submissions`.
