@@ -4,19 +4,23 @@ import rampwf as rw
 from sklearn.model_selection import StratifiedShuffleSplit
 
 problem_title = 'Iris classification'
-prediction_type = rw.prediction_types.multiclass
-workflow = rw.workflows.Classifier()
-prediction_labels = ['setosa', 'versicolor', 'virginica']
 _target_column_name = 'species'
+_prediction_label_names = ['setosa', 'versicolor', 'virginica']
+# A type (class) which will be used to create wrapper objects for y_pred
+Predictions = rw.prediction_types.multiclass.make_predictions_type(
+    label_names=_prediction_label_names)
+# An object implementing the workflow
+workflow = rw.workflows.Classifier()
 
 score_types = [
-    rw.score_types.Accuracy(name='acc', n_columns=len(prediction_labels)),
+    rw.score_types.Accuracy(name='acc', n_columns=len(
+        _prediction_label_names)),
     rw.score_types.ClassificationError(
-        name='err', n_columns=len(prediction_labels)),
+        name='err', n_columns=len(_prediction_label_names)),
     rw.score_types.NegativeLogLikelihood(
-        name='nll', n_columns=len(prediction_labels)),
+        name='nll', n_columns=len(_prediction_label_names)),
     rw.score_types.F1Above(
-        name='f1_70', n_columns=len(prediction_labels), threshold=0.7),
+        name='f1_70', n_columns=len(_prediction_label_names), threshold=0.7),
 ]
 
 
