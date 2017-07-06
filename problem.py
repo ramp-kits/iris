@@ -13,14 +13,10 @@ Predictions = rw.prediction_types.make_multiclass(
 workflow = rw.workflows.Classifier()
 
 score_types = [
-    rw.score_types.Accuracy(name='acc', n_columns=len(
-        _prediction_label_names)),
-    rw.score_types.ClassificationError(
-        name='err', n_columns=len(_prediction_label_names)),
-    rw.score_types.NegativeLogLikelihood(
-        name='nll', n_columns=len(_prediction_label_names)),
-    rw.score_types.F1Above(
-        name='f1_70', n_columns=len(_prediction_label_names), threshold=0.7),
+    rw.score_types.Accuracy(name='acc'),
+    rw.score_types.ClassificationError(name='err'),
+    rw.score_types.NegativeLogLikelihood(name='nll'),
+    rw.score_types.F1Above(name='f1_70', threshold=0.7),
 ]
 
 
