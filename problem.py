@@ -14,7 +14,7 @@ workflow = rw.workflows.Classifier()
 
 score_types = [
     rw.score_types.Accuracy(name='acc'),
-    rw.score_types.ClassificationError(name='err'),
+    rw.score_types.ClassificationError(name='error'),
     rw.score_types.NegativeLogLikelihood(name='nll'),
     rw.score_types.F1Above(name='f1_70', threshold=0.7),
 ]
