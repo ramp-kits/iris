@@ -1,0 +1,9 @@
+name: base
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - scikit-learn
+  - pandas
+  - pip:
+    - git+https://github.com/paris-saclay-cds/ramp-workflow
