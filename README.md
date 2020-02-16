@@ -24,8 +24,8 @@ Get started on this RAMP with the
 
 ### Test a submission
 
-The submissions need to be located in the `submissions/<my_submission>`
-folder.
+The submissions need to be located in the `submissions` folder. For instance
+for `my_submission`, it should be located in `submissions/my_submission`.
 
 To run a specific submission, you can use the `ramp-test` command line:
 
@@ -38,8 +38,6 @@ You can get more information regarding this command line:
 ```bash
 ramp-test --help
 ```
-
-You need to install `ramp-workflow`:
 
 ### To go further
 
