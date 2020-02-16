@@ -20,7 +20,7 @@ usage.
 ### Challenge description
 
 Get started on this RAMP with the
-[dedicated notebook](air_passengers_starting_kit.ipynb).
+[dedicated notebook](iris_starting_kit.ipynb).
 
 ### Test a submission
 
