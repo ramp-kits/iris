@@ -4,6 +4,7 @@ channels:
 dependencies:
   - numpy
   - pandas
-  - ramp-workflow
   - scikit-learn
   - seaborn
+  - pip:
+    - ramp-workflow
